@@ -25,7 +25,13 @@ struct ContentView: View {
             Spacer()
             
             Text("\(conditions)")
+            // Compiler directive
+            // We can use different view modifiers depending on what platform is running
+            #if os(iOS)
                 .font(.title)
+            #else
+                .font(.title3)
+            #endif
 
             Text("\(String(format: "%.1f", arguments: [temperature])) °C")
                 .font(.largeTitle)

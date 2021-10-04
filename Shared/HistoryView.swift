@@ -33,8 +33,10 @@ struct HistoryView: View {
 }
 
 struct HistoryView_Previews: PreviewProvider {
+    
+    @StateObject private static var viewModel = WeatherViewModel()
     static var previews: some View {
-        HistoryView(viewModel: viewModel, temperature: viewModel.history.last!.temperature, feel: viewModel.history.last!.feel, conditions: viewModel.history.last!.condition.description)
-    }
+        HistoryView(viewModel: viewModel)
+
     }
 }
